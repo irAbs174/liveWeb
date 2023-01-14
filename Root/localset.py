@@ -3,6 +3,7 @@
 import os
 from pathlib import Path
 
+CSRF_TRUSTED_ORIGINS = ['https://github.com/','https://irabs174-symmetrical-umbrella-jj5qg4p7xpwh54gv-8000.preview.app.github.dev']
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
