@@ -1,0 +1,17 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}{% if user.is_authenticated %}{{user.username}}--پنل کاربری{%else%}
+خطا - نشست نامعتبر{%endif%}
+{%endblock%}
+{%block content%}
+{%if user.is_authenticated%}
+
+
+
+{%else%}
+<div class="bgl">
+    <label class="lIn">ظاهرا خارج شدید !</label><br>
+    <p class="TestText"><a href="{% url 'login' %}">ورود</a></p>
+</div>
+{%endif%}
+{%endblock%}

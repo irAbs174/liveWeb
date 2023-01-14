@@ -1,0 +1,61 @@
+{% load static %}
+<!-- ***** Header Area Start ***** -->
+<header class="header-area header-sticky wow slideInDown" data-wow-duration="0.75s" data-wow-delay="0s">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <nav class="main-nav">
+          <!-- ***** Logo Start ***** -->
+          <a href="index.html" class="logo">
+            <img src="{% static 'assets/images/logo.png' %}" alt="Chain App Dev">
+          </a>
+          <!-- ***** Logo End ***** -->
+          <!-- ***** Menu Start ***** -->
+          <ul class="nav">
+            <li class="scroll-to-section"><a href="#">تماس با ما</a></li>
+            <li class="scroll-to-section"><a href="#">سرویس ها</a></li>
+            <li class="scroll-to-section"><a href="#">بلاگ</a></li>
+            <li class="scroll-to-section"><a href="/" class="active">خانه</a></li>
+            {% if user.is_authenticated %}<li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> وارد شده اید</a></div></li>{% else %}<li><div class="gradient-button"><a id="modal_trigger" href="#modal"><i class="fa fa-sign-in-alt"></i> ورود به حساب کاربری</a></div></li>{% endif %}
+          </ul>        
+          <a class='menu-trigger'>
+              <span>Menu</span>
+          </a>
+          <!-- ***** Menu End ***** -->
+        </nav>
+      </div>
+    </div>
+  </div>
+</header>
+<!-- ***** Header Area End ***** -->
+
+<div id="modal" class="popupContainer" style="display:none;">
+  <div class="popupHeader">
+      <span class="header_title">ورود به حساب کاربری</span>
+      <span class="modal_close"><i class="fa fa-times"></i></span>
+  </div>
+
+  <section class="popupBody">
+      <!-- Social Login -->
+      <div class="social_login">
+          <div class="">
+
+              <a href="#" class="social_box google">
+                  <span class="icon"><i class="fab fa-google-plus"></i></span>
+                  <span class="icon_title">اتصال با حساب گوگل</span>
+              </a>
+          </div>
+
+          <div class="centeredText">
+              <span>یا از یک ایمل استفاده کنید</span>
+          </div>
+
+          <div class="action_btns">
+              <div><a href="{% url 'login' %}"class="btn">ورود</a></div>
+          </div>
+      </div>
+          <a href="{% url 'signup' %}" class="forgot_password">حساب کاربری ندارید؟! هم اکنون ثبت نام کنید</a>
+      </div>
+      <!-- Register Form -->
+  </section>
+</div>
