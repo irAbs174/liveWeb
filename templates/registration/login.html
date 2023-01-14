@@ -43,7 +43,9 @@
             <i class="fa fa-lock" aria-hidden="true"></i>
           </span>
         </div>
-        
+        {% for error in form.errors %}
+          <p style="color: red">خطا - نام کاربری یا رمز عبور معتبر نیست</p>
+        {% endfor %}
         <div class="container-login100-form-btn">
           <button class="login100-form-btn" type="submit">
             ورود به پنل
@@ -78,7 +80,7 @@
     <script src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
     <script src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
   <!--===============================================================================================-->
-    <script src="{% static 'vendor/select2/select2.min.js' %}v"></script>
+    <script src="{% static 'vendor/select2/select2.min.js' %}"></script>
   <!--===============================================================================================-->
     <script src="{% static 'vendor/tilt/tilt.jquery.min.js' %}"></script>
     <script >
