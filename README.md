@@ -6,3 +6,10 @@ Lan : Python
 fw : Django
 face : html css
 AND: js;
+{%for keys in key%}{{keys.title}}{%endfor%}
+class PageAdministrator(admin.ModelAdmin):
+    fields = ['slug','title','content','author']
+
+
+admin.site.register(PageAdmin, PageAdministrator)
+
